@@ -76,8 +76,12 @@ public class Jugador extends Personaje {
     public void derrota() {
         Scanner sc = new Scanner(System.in);
         System.out.println("¡Has perdido!");
+        System.out.println("==== Historial de Decisiones ====");
+        RegistroDecision.mostrarHistorial();
+
         System.out.println("1. Volver a jugar");
         System.out.println("2. Salir del juego");
+
 
         int opcion = 0;
 

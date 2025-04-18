@@ -20,6 +20,8 @@ public class Sotano extends Escenario{
 				respuesta = respuesta.toUpperCase();
 				switch (respuesta) {
 					case "J" -> {
+						Decision decision = new Decision("Sotano", " J. ");
+						RegistroDecision.guardarDecision(decision);
 						System.out.println(
 								" ---------------------------------------------------------------------------------------------- \n");
 						System.out.println("Aqui está el juego. TRES EN RAYA. Tu serás la 'X' y yo la 'O'\n");
@@ -35,6 +37,8 @@ public class Sotano extends Escenario{
 						opcionValida = true;
 					}
 					case "L" -> {
+						Decision decision = new Decision("Sotano", " L. ");
+						RegistroDecision.guardarDecision(decision);
 						System.out.println(" ---------------------------------------------------------------------------------------------- \n");
 						System.out.println(" ¡Perdiste! El dragon es mas fuerte que tu.\n");
 						jugador.derrota();

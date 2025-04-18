@@ -20,6 +20,8 @@ public class Castillo extends Escenario {
                 int respuesta = sc.nextInt();
                 switch (respuesta) {
                     case 1 -> {
+                        Decision decision = new Decision("Castillo", "Enfrentarte al minotauro.");
+                        RegistroDecision.guardarDecision(decision);
                         System.out.println(" ---------------------------------------------------------------------------------------------- \n");
                         System.out.println("El minotauro te ha retado a que lo venzas en un juego de Piedra, Papel o Tijeras.\n");
                         PiedraPapelTijera piedraPapelTijera = new PiedraPapelTijera();
@@ -34,6 +36,8 @@ public class Castillo extends Escenario {
                         opcionValida = true;
                     }
                     case 2 -> {
+                        Decision decision = new Decision("Castillo", "Llamar al oso para que se encargue del minotauro.");
+                        RegistroDecision.guardarDecision(decision);
                         System.out.println(" ---------------------------------------------------------------------------------------------- \n");
                         System.out.println("Continúa la misión mientras el oso pelea con el minotauro.\n");
                         opcionValida = true;

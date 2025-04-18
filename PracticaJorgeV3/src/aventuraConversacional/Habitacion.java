@@ -11,6 +11,8 @@ public class Habitacion extends Escenario{
 		System.out.println(" ---------------------------------------------------------------------------------------------- \n");
 		System.out.println(" *                                      FIN DEL JUEGO                                        * \n");
 		System.out.println(" ---------------------------------------------------------------------------------------------- \n");
+		System.out.println("==== Historial de Decisiones ====");
+		RegistroDecision.mostrarHistorial();
 		jugador.derrota();
 	}
 

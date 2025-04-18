@@ -23,12 +23,20 @@ public class Casa extends Escenario {
 						System.out.println(" ---------------------------------------------------------------------------------------------- ");
 						System.out.println("Muy bien, hasta luego. Suerte en tu misión.");
 						System.out.println("No olvides llevar todo lo necesario para esta misión.");
+						Decision decision = new Decision("Casa", "Aceptar la misión y continuar.");
+						RegistroDecision.guardarDecision(decision);
+
 						opcionValida = true;
 					}
 					case 2 -> {
-						System.out.println("¡PERDISTE! El mensajero se ha molestado y te asesinó.");
+						System.out.println("¡PERDISTE! El mensajero se ha molestado y te asesinó."+ "\n" );
+						Decision decision = new Decision("Casa", "Ser rebelde y rechazar la misión.");
+						RegistroDecision.guardarDecision(decision);
+						RegistroDecision.mostrarHistorial();
 						jugador.derrota();
 						opcionValida = true;
+
+
 					}
 					default -> System.out.println("Introduce una opción válida.");
 				}
@@ -49,11 +57,15 @@ public class Casa extends Escenario {
 			try {
 				int opcion = sc.nextInt(); // Leer opción
 				switch (opcion) {
-					case 1 -> jugador.mostrarInventario();
+					case 1 -> {
+							Decision decision = new Decision("Casa", "Revisar inventario");
+							RegistroDecision.guardarDecision(decision);
+							jugador.mostrarInventario();
+					}
 					case 2 -> {
-						System.out.println("¡PERDISTE! El mensajero se ha molestado y te asesinó.");
-						jugador.derrota();
-						opcionValida = true;
+							System.out.println("¡PERDISTE! El mensajero se ha molestado y te asesinó.");
+							jugador.derrota();
+							opcionValida = true;
 					}
 					default -> System.out.println("Introduce una opción válida.");
 				}
@@ -74,10 +86,14 @@ public class Casa extends Escenario {
 				int opcion = sc.nextInt(); // Leer opción
 				switch (opcion) {
                     case 1 -> {
+						Decision decision = new Decision("Casa", "Revisar inventario");
+						RegistroDecision.guardarDecision(decision);
                         jugador.mostrarInventario();
                         casa.menuMisionAceptada2(casa,jugador);
                     }
                     case 2 -> {
+						Decision decision = new Decision("Casa", "Ir a la tienda por las cosas necesarias.");
+						RegistroDecision.guardarDecision(decision);
 						casa.obtenerSiguienteEscenario();
 					}
 					default -> System.out.println("Introduce una opción válida.");

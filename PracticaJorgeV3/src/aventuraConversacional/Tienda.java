@@ -24,6 +24,8 @@ public class Tienda extends Escenario {
                     switch (menuTienda) {
 
                         case 1 -> {
+                            Decision decision = new Decision("Tienda", "Pedir uno de cada cosa..");
+                            RegistroDecision.guardarDecision(decision);
                             System.out.println(" ---------------------------------------------------------------------------------------------- \n");
                             System.out.println("Perfecto aqui tiene, son 5 monedas de oro.\r\n");
                             System.out.println(" ---------------------------------------------------------------------------------------------- \n");
@@ -57,6 +59,8 @@ public class Tienda extends Escenario {
                 sc.nextLine();
                 switch (opcion) {
                     case 1 -> {
+                        Decision decision = new Decision("Tienda", "Pagar.");
+                        RegistroDecision.guardarDecision(decision);
                         System.out.println(" ---------------------------------------------------------------------------------------------- \n");
                         revisarDinero(jugador, npc);
                         opcionValida = true;
@@ -77,6 +81,8 @@ public class Tienda extends Escenario {
                         opcionValida = true;
                     }
                     case 3 -> {
+                        Decision decision = new Decision("Tienda", "Robar la tienda.");
+                        RegistroDecision.guardarDecision(decision);
                         System.out.println(" ---------------------------------------------------------------------------------------------- \n");
                         System.out.println("¡Perdiste! Te asesina el vendedor por intentar robarlo.");
                         jugador.derrota();

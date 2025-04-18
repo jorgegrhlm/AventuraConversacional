@@ -16,16 +16,20 @@ public class Bosque extends Escenario {
 		while (!opcionValida) {
 			try {
 				System.out.println(" ---------------------------------------------------------------------------------------------- \n");
-				System.out.println(" 1. Sacar la espada y luchar contra el oso. \r\n" + "\r\n" + " 2. Dar kit de comida y bebida al oso. \r\n" + "\r\n" + " 3. Salir huyendo del bosque");
+				System.out.println(" 1. Sacar la espada y luchar contra el oso. \r\n" + "\r\n" + " 2. Dar kit de comida y bebida al oso. \r\n" + "\r\n" + " 3. Salir huyendo del bosque.");
 				int respuesta = sc.nextInt();
 				switch (respuesta) {
 					case 1 -> {
+						Decision decision = new Decision("Bosque", "Sacar la espada y luchar contra el oso.");
+						RegistroDecision.guardarDecision(decision);
 						System.out.println(" ---------------------------------------------------------------------------------------------- \n");
 						System.out.println("Perdiste! el oso es mas grande que tú y te asesinó\n");
 						jugador.derrota();
 						opcionValida = true;
 					}
 					case 2 -> {
+						Decision decision = new Decision("Bosque", "Dar kit de comida y bebida al oso.");
+						RegistroDecision.guardarDecision(decision);
 						System.out.println(" ---------------------------------------------------------------------------------------------- \n");
 						System.out.println("Alimentaste al oso y ganaste un fiel compañero de ruta.\n");
 						Item itemAEliminar = null;
@@ -46,6 +50,8 @@ public class Bosque extends Escenario {
 						opcionValida = true;
 					}
 					case 3 -> {
+						Decision decision = new Decision("Bosque", "Salir huyendo del bosque.");
+						RegistroDecision.guardarDecision(decision);
 						System.out.println(" ---------------------------------------------------------------------------------------------- \n");
 						System.out.println("Perdiste! el oso te alcanzó y te asesinó.\n");
 						jugador.derrota();

@@ -11,6 +11,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         List<Item> inventario = new ArrayList<>();
 
+
         Jugador jugador = new Jugador("Heroe", 100, inventario);
         Casa casa = new Casa("*CASA*", "Estas tranquilo en tu casa cuando el Mensajero del rey toca tu puerta!\n");
         NPC mensajero = new NPC("*MENSAJERO*", 100, "Hola! necesitamos de tu ayuda para salvar a la princesa Fiona.\r\n" + "La pricnesa se encuentra en un castillo, bajo la custodia de un dragon.");
@@ -61,5 +62,6 @@ public class Main {
         habitacion.mostrarEscenario();
         princesa.interactuar(jugador);
         habitacion.menuFinal(jugador);
+
     }
 }
